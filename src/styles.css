@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'DS-DIGIB';
+  src: url('fonts/DS-DIGIB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 400px;
+  background-color: #93959e;
+  border: 3px solid #1a1919;
+  padding: 25px 15px 25px 15px;
+  outline: 0;
+  border-radius: 10px;
+}
+
+.display {
+  border: 3px solid #3b3838;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  box-sizing: border-box;
+  font-family: 'DS-DIGIB';
+  font-size: 70px;
+  background-color: #808169;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buttons {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.button {
+  cursor: pointer;
+  width: calc(100% / 4 - 4px);
+  height: 50px;
+  font-size: 30px;
+  border-radius: 5px;
+  background-color: #242424;
+  color: #e0dcdc;
+  border: 2px solid #1a1919;
+}
+
+.button:active {
+  background-color: #1a1919;
+}
+.number {
+  background-color: #6a6e6f;
+}
+
+.number:active {
+  background-color: #505455;
+}
+
+.CE {
+  background-color: #7d2e23;
+}
+
+.CE.button:active {
+  background-color: #6a251c;
+}
