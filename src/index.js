@@ -1,8 +1,9 @@
 const buttons = document.querySelector('.buttons');
-const display = document.querySelector('.display');
+const display = document.querySelector('.text');
 buttons.addEventListener('click', onClick);
-
+const box2 = document.querySelector('.box2');
 let a = 0;
+let b = 0;
 let resolt = 0;
 let operation = '';
 let newNumber = false;
@@ -58,6 +59,9 @@ function onClick(e) {
   }
 
   if (e.target.classList.contains('number')) {
+    if (display.textContent.length === 8) {
+      newNumber = true;
+    }
     if (display.textContent === '0' || newNumber) {
       display.textContent = '';
       newNumber = false;
@@ -72,27 +76,47 @@ function onClick(e) {
   }
 
   if (e.target.textContent === '=') {
+    if (!newNumber) {
+      b = Number(display.textContent);
+    }
     newNumber = true;
     switch (operation) {
       case '-':
-        resolt = a - Number(display.textContent);
-        display.textContent = Number(resolt.toFixed(8));
+        a -= b;
+        if (a.toString().length > 8) {
+          display.textContent = Number(a.toString().slice(0, 9));
+          return;
+        }
+        display.textContent = a;
         break;
       case '+':
-        resolt = a + Number(display.textContent);
-        display.textContent = Number(resolt.toFixed(8));
+        a += b;
+        if (a.toString().length > 8) {
+          display.textContent = Number(a.toString().slice(0, 9));
+          return;
+        }
+        display.textContent = a;
         break;
       case '/':
-        resolt = a / Number(display.textContent);
+        a /= b;
         if (resolt === Infinity || isNaN(resolt)) {
           display.textContent = 'error';
           return;
         }
-        display.textContent = Number(resolt.toFixed(8));
+        if (a.toString().length > 8) {
+          display.textContent = Number(a.toString().slice(0, 9));
+          return;
+        }
+        display.textContent = a;
+
         break;
       case 'x':
-        resolt = a * Number(display.textContent);
-        display.textContent = Number(resolt.toFixed(8));
+        a *= b;
+        if (a.toString().length > 8) {
+          display.textContent = Number(a.toString().slice(0, 9));
+          return;
+        }
+        display.textContent = a;
         break;
     }
   }
@@ -114,6 +138,7 @@ function onClick(e) {
 
     case '%':
       display.textContent /= 100;
+      newNumber = true;
       break;
 
     case '+/-':
