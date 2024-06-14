@@ -2,6 +2,7 @@ const buttons = document.querySelector('.buttons');
 const display = document.querySelector('.text');
 buttons.addEventListener('click', onClick);
 const box2 = document.querySelector('.box2');
+
 let a = 0;
 let b = 0;
 let resolt = 0;
