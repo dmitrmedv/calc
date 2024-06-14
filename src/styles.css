@@ -14,7 +14,7 @@ p {
 }
 
 .container {
-  margin: 0 auto;
+  margin: 20px auto;
   box-sizing: border-box;
   width: 410px;
   background-color: #93959e;

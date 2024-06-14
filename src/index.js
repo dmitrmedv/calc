@@ -99,7 +99,7 @@ function onClick(e) {
         break;
       case '/':
         a /= b;
-        if (resolt === Infinity || isNaN(resolt)) {
+        if (a === Infinity || isNaN(a)) {
           display.textContent = 'error';
           return;
         }
@@ -108,7 +108,6 @@ function onClick(e) {
           return;
         }
         display.textContent = a;
-
         break;
       case 'x':
         a *= b;
