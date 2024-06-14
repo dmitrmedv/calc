@@ -7,6 +7,7 @@ let b = 0;
 let resolt = 0;
 let operation = '';
 let newNumber = false;
+display.textContent = '0';
 
 const buttonsRef = [
   'CE',
@@ -148,6 +149,7 @@ function onClick(e) {
       if (display.textContent.includes('.')) {
         return;
       }
+
       display.textContent += '.';
       break;
   }
